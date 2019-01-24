@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <style>
-      pre {
-          display: block;
-          font-family: monospace;
-          white-space: pre-line;
-          margin: 1em 0px;
-          line-height: 1.3em;
+      body, html { height: 100%; margin: 0; font-size: 1.2rem;}
+      a { color: inherit; }
+      #container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
       }
-      a { color: inherit; text-decoration: none; }
+      .vr {
+          height: 10rem;
+          width: 0;
+          margin: 1.5rem;
+          border: 0.8px solid #222222;
+      }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sina Samavati</title>
   </head>
 
   <body>
-    <pre>
-      Sina Samavati
-
-      GitHub: <a href="https://github.com/sinasamavati">https://github.com/sinasamavati</a>
-      Medium: <a href="https://medium.com/@sinasamavati">https://medium.com/@sinasamavati</a>
-      Twitter: <a href="https://twitter.com/sinasamavati">https://twitter.com/sinasamavati</a>
-      Email: <a href="mailto:sina.samv@gmail.com">sina.samv@gmail.com</a>
-    </pre>
+    <div id="container">
+      <div id="name">
+        <h1>Sina Samavati</h1>
+      </div>
+      <div class="vr"></div>
+      <div id="links">
+        <p><a href="https://github.com/sinasamavati"><i>Open Source</i></a></p>
+        <p><a href="https://medium.com/@sinasamavati"><i>Writing</i></a></p>
+        <p><a href="mailto:sina.samv@gmail.com"><i>Contact</i></a></p>
+      </div>
+    </div>
   </body>
 </html>
