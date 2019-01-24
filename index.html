@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <style>
-      body, html {
+      html, body {
           height: 100%;
           margin: 0;
-          font-size: 2.5vw;
+          font-family: 'Libre Baskerville', serif;
+          font-size: 16px;
       }
-      a { color: inherit; }
-      #container {
+      @media screen and (min-width: 800px) {
+          html, body {
+              font-size: 24px;
+          }
+      }
+      a { color: #111111; }
+      h1 { font-weight: normal; }
+      .container {
+          height: 100%;
           display: flex;
+          flex-flow: row wrap;
           align-items: center;
           justify-content: center;
-          height: 100%;
       }
+      .container > .col {
+          flex: 1;
+          margin: 0.5rem;
+      }
+      .align-left { text-align: left; }
+      .align-right { text-align: right; }
       .vr {
           height: 10rem;
           width: 0;
-          margin: 1.5rem;
+          margin: 0.5rem;
           border: 0.8px solid #222222;
       }
     </style>
@@ -26,10 +41,12 @@
   </head>
 
   <body>
-    <div id="container">
-      <h1>Sina Samavati</h1>
+    <div class="container">
+      <div class="col align-right">
+        <h1>Sina Samavati</h1>
+      </div>
       <div class="vr"></div>
-      <div id="links">
+      <div class="col align-left">
         <p><a href="https://github.com/sinasamavati"><i>Open Source</i></a></p>
         <p><a href="https://medium.com/@sinasamavati"><i>Writing</i></a></p>
         <p><a href="mailto:sina.samv@gmail.com"><i>Contact</i></a></p>
