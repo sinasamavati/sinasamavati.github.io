@@ -1,0 +1,49 @@
+#!/bin/sh
+
+template="./template/default.html"
+output_dir="./writing"
+
+usage() {
+    echo "Usage: ./$(basename $0) piece.org"
+}
+
+check_args() {
+    if [ $# -eq 0 ]; then
+        echo "$(tput bold)No file is specified!$(tput sgr0)"
+        echo
+        usage
+        exit 1
+    fi
+
+    if [ "$1" == "-h" ]; then
+        usage
+        exit 0
+    fi
+}
+
+build_css() {
+    output="css/style.min.css"
+    cat css/reset.css css/style.scss | sassc -s -t compressed $output
+}
+
+minify_html() {
+    sed 's/^[ \t]*//' | tr -d "\r\n"
+}
+
+build_piece() {
+    input=$1
+    title="$(head -n 1 $input | sed 's/\*[ \t]//')"
+    output="$output_dir/$(basename ${input%.*}).html"
+
+    pandoc -s --template $template \
+           --metadata pagetitle="$title" \
+           --metadata date="$(date +"%d %B %Y")" \
+           -f org+smart $input | minify_html > $output
+
+    echo "Created $output"
+    open $output
+}
+
+check_args $@
+build_css
+build_piece $@

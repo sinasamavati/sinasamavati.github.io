@@ -1,0 +1,148 @@
+/*
+-- https://sinasamavati.com
+*/
+
+$container-margin-y: 1.25rem;
+$container-margin-x: 0.75rem;
+$col-margin: 0.75rem;
+$base-font-size: 17px;
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i');
+
+html, body {
+    font-family: Palatino, "Libre Baskerville", serif;
+    font-size: $base-font-size;
+    line-height: 1.8;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @media screen and (min-width: 480px) {
+        font-size: $base-font-size + 1.5;
+    }
+
+    @media screen and (min-width: 640px) {
+        font-size: $base-font-size + 2.5;
+    }
+
+    @media screen and (min-width: 800px) {
+        font-size: $base-font-size + 4;
+    }
+
+    @media screen and (min-width: 960px) {
+        font-size: $base-font-size + 5;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: 2.2rem - ($i * 2 / 10);
+    }
+}
+
+p {
+    font-feature-settings: "kern";
+    white-space: normal;
+
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+a {
+    color: #111111;
+    font-style: italic;
+}
+
+em {
+    font-style: italic;
+}
+
+b {
+    font-weight: bold;
+}
+
+hr {
+    text-align: center;
+    vertical-align: middle;
+    max-width: 10rem;
+    margin: 2rem auto;
+    border: 0;
+    display: block;
+
+    &:before {
+        content: "*****";
+        letter-spacing: 1rem;
+        padding-left: 1rem;
+        display: block;
+    }
+}
+
+li {
+    margin-left: 0.8rem;
+    margin-bottom: 0.4rem;
+
+    &:before {
+        content: "– ";
+    }
+}
+
+blockquote {
+    font-style: italic;
+    margin: 1.25rem;
+
+    li {
+        margin-left: 0;
+    }
+}
+
+.container {
+    margin: $container-margin-y $container-margin-x;
+
+    @media screen and (min-width: 800px) {
+        margin: ($container-margin-y * 2) ($container-margin-x * 2.5);
+    }
+}
+
+.container > .col {
+    max-width: 900px;
+    margin: $col-margin;
+
+    @media screen and (min-width: 800px) {
+        margin: $col-margin + 0.25;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .date {
+        text-align: right;
+        font-size: 0.8rem;
+        font-style: italic;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.link > a {
+    h3 {
+        color: rgba(0, 0, 0, 1);
+    }
+
+    display: block;
+    text-decoration: none;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.65);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition: color 0.2s linear;
+
+    &:hover {
+        color: rgba(0, 0, 0, 1);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+}
