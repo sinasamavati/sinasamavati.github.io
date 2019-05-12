@@ -22,12 +22,8 @@ check_args() {
 }
 
 build_css() {
-    output="css/style.min.css"
-    cat css/reset.css css/style.scss | sassc -s -t compressed $output
-}
-
-minify_html() {
-    sed 's/^[ \t]*//' | tr -d "\r\n"
+    output="writing/css/style.min.css"
+    cat writing/css/reset.css writing/css/style.scss | sassc -s -t compressed $output
 }
 
 build_piece() {
@@ -38,7 +34,7 @@ build_piece() {
     pandoc -s --template $template \
            --metadata pagetitle="$title" \
            --metadata date="$(date +"%d %B %Y")" \
-           -f org+smart $input | minify_html > $output
+           -f org+smart $input -o $output
 
     echo "Created $output"
     open $output
