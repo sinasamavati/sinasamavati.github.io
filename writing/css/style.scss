@@ -12,7 +12,7 @@ $base-font-size: 17px;
 html, body {
     font-family: Palatino, "Libre Baskerville", serif;
     font-size: $base-font-size;
-    line-height: 1.8;
+    line-height: 1.7;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -35,8 +35,9 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
     font-weight: 400;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.6rem;
 }
 
 @for $i from 1 through 6 {
