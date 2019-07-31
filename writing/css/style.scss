@@ -2,148 +2,96 @@
 -- https://sinasamavati.com
 */
 
-$container-margin-y: 1.25rem;
-$container-margin-x: 0.75rem;
-$col-margin: 0.75rem;
-$base-font-size: 17px;
-
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i');
 
 html, body {
     font-family: Palatino, "Libre Baskerville", serif;
-    font-size: $base-font-size;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.6;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 
-    @media screen and (min-width: 480px) {
-        font-size: $base-font-size + 1.5;
-    }
-
     @media screen and (min-width: 640px) {
-        font-size: $base-font-size + 2.5;
+        font-size: 1.15rem;
     }
 
     @media screen and (min-width: 800px) {
-        font-size: $base-font-size + 4;
-    }
-
-    @media screen and (min-width: 960px) {
-        font-size: $base-font-size + 5;
+        font-size: 1.2rem;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.4;
+    line-height: 1.2;
     font-weight: 400;
-    margin-bottom: 0.6rem;
+    padding: .2em 0;
 }
 
 @for $i from 1 through 6 {
     h#{$i} {
-        font-size: 2.2rem - ($i * 2 / 10);
+        font-size: abs(8em - $i) / 4;
     }
 }
 
 p {
     font-feature-settings: "kern";
     white-space: normal;
-
-    &:not(:last-child) {
-        margin-bottom: 1.5rem;
-    }
-}
-
-a {
-    color: #111111;
-    font-style: italic;
-}
-
-em {
-    font-style: italic;
-}
-
-b {
-    font-weight: bold;
+    margin-bottom: 1.25em;
 }
 
 hr {
+    display: block;
     text-align: center;
     vertical-align: middle;
-    max-width: 10rem;
-    margin: 2rem auto;
+    max-width: 10em;
+    margin: 2em auto;
     border: 0;
-    display: block;
 
     &:before {
         content: "*****";
-        letter-spacing: 1rem;
-        padding-left: 1rem;
+        letter-spacing: 1em;
+        padding-left: 1em;
         display: block;
     }
 }
 
 li {
-    margin-left: 0.8rem;
-    margin-bottom: 0.4rem;
+    margin-left: .8em;
+    margin-bottom: .4em;
 
-    &:before {
-        content: "– ";
-    }
+    &:before { content: "– "; }
 }
 
 blockquote {
     font-style: italic;
-    margin: 1.25rem;
+    margin: 1.25em;
 
-    li {
-        margin-left: 0;
-    }
+    li { margin-left: 0; }
 }
 
-.container {
-    margin: $container-margin-y $container-margin-x;
-
-    @media screen and (min-width: 800px) {
-        margin: ($container-margin-y * 2) ($container-margin-x * 2.5);
-    }
-}
-
-.container > .col {
-    max-width: 900px;
-    margin: $col-margin;
-
-    @media screen and (min-width: 800px) {
-        margin: $col-margin + 0.25;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .date {
-        text-align: right;
-        font-size: 0.8rem;
-        font-style: italic;
-        margin-bottom: 0.4rem;
-    }
-}
-
-.link > a {
-    h3 {
-        color: rgba(0, 0, 0, 1);
-    }
-
+time {
     display: block;
-    text-decoration: none;
-    font-style: normal;
-    color: rgba(0, 0, 0, 0.65);
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    transition: color 0.2s linear;
-
-    &:hover {
-        color: rgba(0, 0, 0, 1);
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    }
+    font-size: .8em;
+    font-style: italic;
+    text-align: right;
 }
+
+a { color: #111; }
+em { font-style: italic; }
+b { font-weight: bold; }
+
+.dib { display: inline-block; }
+
+.row { max-width: 40rem; }
+.ma { margin: 1rem; }
+.mv { margin-top: 2rem; margin-bottom: 2rem; }
+
+.link { font-style: normal; text-decoration: none; transition: all .15s ease-in; }
+.link:hover { transition: all .15s ease-in; }
+.link:active { transition: all .15s ease-in; }
+.link:focus { transition: all .15s ease-in; outline: 1px dotted currentColor; }
+
+.o-65 { opacity: .65; }
+
+.glow * { transition: opacity .15s ease-in; }
+.glow:hover *, .glow:focus * { opacity: 1; transition: opacity .15s ease-in; }
