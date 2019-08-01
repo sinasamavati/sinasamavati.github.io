@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mvm2tyz.css">
     <style>
       html, body {
+          font-family: garamond, adobe-garamond-pro, serif;
+          font-size: 1.2rem;
+          line-height: 1.5;
+          color: rgba(0, 0, 0, .85);
           height: 100%;
+          padding: 0;
           margin: 0;
-          font-family: Palatino, "Libre Baskerville", serif;
-          font-size: 17px;
       }
-      @media screen and (min-width: 800px) {
-          html, body {
-              font-size: 24px;
-          }
+      @media (min-width: 48em) {
+          html, body { font-size: 1.5rem; }
       }
-      a { color: #111111; }
       h1 {
-          font-weight: normal;
-          margin: 0.5rem 0;
+          font-size: 2em;
+          font-weight: 400;
+          line-height: 1;
+          margin: 0;
+      }
+      a {
+          color: #111111;
+          font-style: italic;
       }
       .container {
           height: 100%;
           display: flex;
-          flex-flow: row wrap;
           align-items: center;
           justify-content: center;
       }
-      .container > .col {
-          flex: 1;
-          margin: 0.5rem;
-      }
-      .align-left { text-align: left; }
-      .align-right { text-align: right; }
-      .vr {
-          height: 10rem;
-          width: 2px;
-          margin: 0.5rem;
-          background-image: -webkit-radial-gradient(center, 60% 100%, black, white);
-          border-radius: 2rem;
-      }
+      .col { flex: 1; }
+      .tl { text-align: left; }
+      .tr { text-align: right; }
+      .h { height: 14rem; }
+      .br { border-radius: 50%; }
+      .ba { border: 1px solid rgba(0, 0, 0, .75); }
+      .ma { margin: .5rem; }
+      .mv { margin-top: .5rem; margin-bottom: .5rem; }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Functional programmer. Erlang consultant. Writes to formulate ideas.">
     <title>Sina Samavati</title>
   </head>
 
   <body>
-    <div class="container">
-      <div class="col align-right">
-        <h1>Sina Samavati</h1>
+    <main class="container">
+      <header class="col ma tr">
+        <h1 class="">Sina Samavati</h1>
         <em>Erlang Consultant</em>
-      </div>
-      <div class="vr"></div>
-      <div class="col align-left">
-        <p><a href="https://github.com/sinasamavati"><i>Open Source</i></a></p>
-        <p><a href="/writing"><i>Writing</i></a></p>
-        <p><a href="mailto:sina.samv@gmail.com"><i>Contact</i></a></p>
-      </div>
-    </div>
+      </header>
+      <div class="h ma br ba"></div>
+      <section class="col ma tl">
+        <div class="mv"><a href="https://github.com/sinasamavati">Open Source</a></div>
+        <div class="mv"><a href="/writing">Writing</a></div>
+        <div class="mv"><a href="mailto:sina.samv@gmail.com">Contact</a></div>
+      </section>
+    </main>
   </body>
 </html>

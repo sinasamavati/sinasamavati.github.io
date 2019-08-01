@@ -22,8 +22,7 @@ check_args() {
 }
 
 build_css() {
-    output="writing/css/style.min.css"
-    cat writing/css/reset.css writing/css/style.scss | sassc -s -t compressed $output
+    sassc -t compressed writing/css/style.scss writing/css/style.min.css
 }
 
 build_piece() {
