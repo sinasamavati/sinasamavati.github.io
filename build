@@ -39,6 +39,33 @@ build_piece() {
     open $output
 }
 
+build_sitemap() {
+    cat <<EOF > sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sinasamavati.com/</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://sinasamavati.com/writing/</loc>
+    <priority>0.8</priority>
+  </url>
+EOF
+
+    for f in $(find writing -name '*.html' -a ! -name index.html); do
+        cat <<EOF >> sitemap.xml
+  <url>
+    <loc>https://sinasamavati.com/$f</loc>
+    <priority>0.5</priority>
+  </url>
+EOF
+    done
+
+    echo '</urlset>' >> sitemap.xml
+}
+
 check_args $@
 build_css
 build_piece $@
+build_sitemap
