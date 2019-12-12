@@ -41,9 +41,10 @@ hr {
 
     &:before {
         content: "*****";
+        display: block;
         letter-spacing: 1em;
         padding-left: 1em;
-        display: block;
+        padding-top: .5em;
     }
 }
 
@@ -66,7 +67,7 @@ em { font-style: italic; }
 b { font-weight: bold; }
 
 .row { max-width: 32em; }
-.ma { margin: 1.25rem 1.25rem; }
+.ma { margin: 1rem 1rem; }
 .mv { margin-top: 1rem; margin-bottom: 1rem; }
 .mv2 { margin-top: 2rem; margin-bottom: 2rem; }
 
