@@ -32,7 +32,7 @@ build_piece() {
 
     pandoc -s --template $template \
            --metadata pagetitle="$title" \
-           --metadata date="$(date +"%d %B %Y")" \
+           --metadata date="$(date +"%-d %B %Y")" \
            -f org+smart $input -o $output
 
     echo "Created $output"
